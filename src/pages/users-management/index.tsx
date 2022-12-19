@@ -9,6 +9,7 @@ import LazyLoad from "react-lazyload";
 import Loading from "../../components/loading";
 
 const UserManagement = () => {
+  // get list users
   const dispatch = useDispatch();
   const userData = useSelector((state: AppState) => state.listUsers.users);
   const loading = useSelector((state: AppState) => state.listUsers.loading);
