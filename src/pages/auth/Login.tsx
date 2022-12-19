@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Button,
   Container,
@@ -6,14 +6,18 @@ import {
   FormControl,
   FormGroup,
 } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import MVLogo from "../../assets/images/logo.png";
 import { ROUTES } from "../../constants";
 import { userLogin } from "../../services/actions/loginAction";
+import { AppState } from "../../services/reducers";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const loginSuccess = useSelector(
+    (state: AppState) => state.userInfo.loginSuccess
+  );
   const [account, setAccount] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -26,19 +30,22 @@ const Login = () => {
         matKhau: password,
       })
     );
-    setAccount("");
-    setPassword("");
-    setTimeout(() => {
-      navigate(ROUTES.HOME);
-    }, 1500);
+    // setTimeout(() => {
+    //   navigate(ROUTES.HOME);
+    // }, 1500);
   };
+
+  useEffect(() => {
+    if (loginSuccess) {
+      navigate(ROUTES.HOME);
+    }
+  }, [loginSuccess]);
 
   return (
     <Container className="mv-auth-form">
       <div className="mb-5 text-center">
         <img src={MVLogo} alt="mv-logo" className="mv-logo" />
         <h1 className="mv-auth-title">sign in</h1>
-        <h1 className="mv-auth-title">Netflix and chill</h1>
       </div>
       <Form onSubmit={handleLogin}>
         <FormGroup className="mv-auth-input">

@@ -7,6 +7,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Home from "./pages/home";
 import NotFound from "./pages/not-found";
+import UserManagement from "./pages/users-management";
 import AuthRoute from "./routes/auth-route";
 import ContentRoute from "./routes/content-route";
 
@@ -22,6 +23,7 @@ function App() {
         </Route>
         <Route element={<ContentRoute />}>
           <Route path={ROUTES.HOME} element={<Home />} />
+          <Route path={ROUTES.USERS} element={<UserManagement />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -3,21 +3,26 @@
 // Core
 @import "core/variables";
 @import "core/button";
+@import "core/mixin";
 
 // Components
 @import "components/header";
 @import "components/footer";
 @import "components/navbar";
+@import "components/user-item";
 
 // Pages
 @import "pages/auth";
 @import "pages/home";
+@import "pages/user-management";
 
 // Layouts
 @import "layouts/content-layout";
+
 html {
   background-color: black;
 }
+
 .auth-layout {
   height: 100vh;
   background-image: url(../images/auth-background.jpg);
@@ -53,4 +58,40 @@ html {
 
 .form-control {
   width: 75%;
+}
+
+.list-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation-name: rotateCircle;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  @keyframes rotateCircle {
+    0% {
+      transform: rotate(0);
+    }
+
+    25% {
+      transform: rotate(90deg);
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &.component {
+    height: 100vh;
+  }
 }
