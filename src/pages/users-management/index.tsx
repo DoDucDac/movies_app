@@ -1,12 +1,11 @@
-import React, { Suspense } from "react";
 import { useEffect } from "react";
-import { Container, Table } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import LazyLoad from "react-lazyload";
 import { useDispatch, useSelector } from "react-redux";
+import Loading from "../../components/loading";
+import UserItem from "../../components/user-item";
 import { getListUser } from "../../services/actions/listUsersAction";
 import { AppState } from "../../services/reducers";
-import UserItem from "../../components/user-item";
-import LazyLoad from "react-lazyload";
-import Loading from "../../components/loading";
 
 const UserManagement = () => {
   // get list users

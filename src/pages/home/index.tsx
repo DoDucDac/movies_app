@@ -4,29 +4,76 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 import { FiPlayCircle } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import "react-slideshow-image/dist/styles.css";
-import { getListBanner } from "../../services/actions/getListMoviesAction";
+import {
+  getListBanner,
+  getListMovies,
+} from "../../services/actions/getListMoviesAction";
 import { AppState } from "../../services/reducers";
+// import Moment from "react-moment";
+
 const Home = () => {
-  const [listData, setListData] = useState([]);
+  const [listBannerData, setListBannerData] = useState([]);
+  const [listMoviesData, setListMoviesData] = useState([]);
   const dispatch = useDispatch();
+  const [category, setCategory] = useState<string>("GP00");
+  const [name, setName] = useState<string>("");
+  const [Page, setPage] = useState<number>(1);
+  const [PageSize, setPageSize] = useState<number>(50);
+  const categories = [
+    { name: "Kinh dị", value: "GP00" },
+    { name: "Chiến lược", value: "GP01" },
+    { name: "Hành động", value: "GP02" },
+    { name: "Hài hước", value: "GP03" },
+    { name: "Hoạt hình", value: "GP04" },
+    { name: "Truyền hình", value: "GP05" },
+    { name: "Tình cảm", value: "GP06" },
+  ];
+
+  // useSelector
   const listBanner = useSelector(
     (state: AppState) => state.listMovies.listBanner
   );
+  const listMovies = useSelector(
+    (state: AppState) => state.listMovies.listMovies
+  );
+
   useEffect(() => {
     dispatch(getListBanner());
-  }, []);
+    dispatch(
+      getListMovies(
+        name == ""
+          ? {
+              maNhom: category,
+              soTrang: Page,
+              soPhanTuTrenTrang: PageSize,
+            }
+          : {
+              maNhom: category,
+              tenPhim: name,
+              soTrang: Page,
+              soPhanTuTrenTrang: PageSize,
+            }
+      )
+    );
+  }, [category]);
 
   useEffect(() => {
     if (listBanner?.length > 0) {
-      setListData(listBanner);
+      setListBannerData(listBanner);
     }
   }, [listBanner]);
+
+  useEffect(() => {
+    if (listMovies?.items?.length > 0) {
+      setListMoviesData(listMovies?.items);
+    }
+  }, [listMovies]);
 
   return (
     <div className="mv-home-container">
       <div className="mv-home-banner">
         <Carousel style={{ height: "100%" }}>
-          {listData.map((item: any) => (
+          {listBannerData.map((item: any) => (
             <Carousel.Item key={item.maBanner}>
               <img
                 className="d-block w-100"
@@ -48,7 +95,44 @@ const Home = () => {
           </Button>
         </div>
       </div>
-      <div className="mv-home-list"></div>
+      {/* <img src={logoNetFlix} style={{height:'30px', width: '200px'}} /> */}
+      <div className="mv-home-list-container container">
+        <div className="mv-home-list-category">
+          <div className="abc">
+            {categories.map((item, idx) => (
+              <div className="category-link-container">
+                <span
+                  className="category-link"
+                  key={idx}
+                  onClick={() => {
+                    setCategory(item.value);
+                  }}
+                >
+                  {item.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mv-home-list row">
+          {listMoviesData.map((item: any) => (
+            <div
+              className="mv-home-list-item col-lg-3 d-flex flex-column"
+              key={item.maPhim}
+            >
+              <div className="mv-home-item">
+                <img src={item.hinhAnh} alt={item.tenPhim} />
+                <p className="name-movie">{item.tenPhim}</p>
+                <p className="comming">
+                  Ngày khởi chiếu:{" "}
+                  {/* <Moment format="YYYY/MM/DD">{item.ngayKhoiChieu}</Moment> */}
+                </p>
+                {/* <p className="rating">RATING: {item.danhGia}</p> */}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

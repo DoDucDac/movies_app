@@ -1,3 +1,4 @@
+import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 
 const ContentLayout = ({ children }: any) => {
@@ -5,6 +6,7 @@ const ContentLayout = ({ children }: any) => {
     <div className="mv-content-layout-container">
       <Navbar />
       {children}
+      <Footer />
     </div>
   );
 };

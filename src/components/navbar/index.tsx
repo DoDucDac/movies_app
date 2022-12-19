@@ -2,16 +2,15 @@ import { Dropdown } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavBar from "react-bootstrap/Navbar";
+import { NavLink } from "react-router-dom";
 import avatar from "../../assets/images/User-avatar.svg.png";
 
-import { NavLink } from "react-router-dom";
-import logoNetFlix from "../../assets/images/Netflix_2015_logo.svg.png";
 import { ROUTES } from "../../constants";
-import AvatarUser from "../avatar";
+import logoNetFlix from "../../assets/images/Netflix_2015_logo.svg.png";
 
 const Navbar = () => {
   return (
-    <div className="mv-nav-container container">
+    <div className="mv-nav-container">
       <NavBar bg="Dark" expand="lg">
         <Container fluid>
           <NavBar.Brand href="/home">

@@ -14,4 +14,5 @@ export const ENDPOINTS = {
   REGISTER: "/QuanLyNguoiDung/DangKy",
   GET_LIST_BANNER: "/QuanLyPhim/LayDanhSachBanner",
   GET_LIST_USERS: "/QuanLyNguoiDung/LayDanhSachNguoiDung",
+  GET_LIST_MOVIES: "/QuanLyPhim/LayDanhSachPhimPhanTrang",
 };
