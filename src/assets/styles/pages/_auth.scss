@@ -1,0 +1,19 @@
+.mv-auth-form {
+  width: 30%;
+  padding: 30px 20px;
+  min-height: 400px;
+  background: rgba($mv-bg-color, 0.9);
+  border-radius: 20px;
+
+  .mv-logo {
+    width: 30%;
+    margin-bottom: 15px;
+  }
+
+  .mv-auth-title {
+    text-transform: capitalize;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+}

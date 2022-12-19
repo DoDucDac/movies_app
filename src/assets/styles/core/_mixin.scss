@@ -1,0 +1,13 @@
+@mixin nav-link($opacity) {
+  color: $mv-text-main-color; //
+  font-size: 16px;
+  transition: all 0.2s linear;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 20px;
+  opacity: $opacity;
+  &:hover {
+    color: $mv-text-main-color;
+    opacity: 1;
+  }
+}

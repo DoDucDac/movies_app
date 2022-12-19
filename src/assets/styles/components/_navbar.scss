@@ -1,0 +1,24 @@
+.mv-nav-container {
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .mv-nav-navLink {
+    @include nav-link(0.6);
+  }
+
+  .mv-nav-navLink-active {
+    @include nav-link(1);
+  }
+
+  .mv-nav-utils-container {
+    position: absolute;
+    right: 4%;
+    top: 20%;
+    .mv-nav-user-btn {
+      border-color: white;
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

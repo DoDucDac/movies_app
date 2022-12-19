@@ -1,0 +1,31 @@
+.mv-home-container {
+   margin-top: 20px;
+   position: relative;
+   img {
+      width: 100%;
+      max-height: 650px;
+   }
+   .mv-home-btn-container {
+      position: absolute;
+      bottom: 20%;
+      left: 5%;
+      z-index: 1;
+      .mv-home-btn-book {
+         background-color: #ffffffb7;
+         color: $mv-bg-color;
+         font-weight: 600;
+         width: 180px;
+         height: 50px;
+         border: 1px solid black;
+      }
+      .mv-home-btn-info {
+         background-color: #6f7371b7;
+         color: $mv-text-main-color;
+         width: 180px;
+         height: 50px;
+         font-weight: 600;
+         margin-left: 15px;
+         border: 1px solid white;
+      }
+   }
+}

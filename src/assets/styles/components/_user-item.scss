@@ -1,0 +1,44 @@
+.lazyload-wrapper {
+  width: 70%;
+  background-color: lighten($mv-bg-color, 10%);
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 10px;
+  transition: all 0.3s;
+  .user-item-box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 18px;
+
+    .user-role {
+      font-size: 16px;
+      text-transform: capitalize;
+      color: $mv-text-main-color;
+      opacity: 0.8;
+    }
+  }
+
+  .user-info {
+    text-transform: capitalize;
+    color: $mv-text-main-color !important;
+    font-weight: bold;
+  }
+
+  .user-icon-box {
+    .user-icon {
+      color: $mv-text-sub-color;
+      transition: all 0.3s;
+      margin: 0 10px;
+      &:hover {
+        color: lighten($mv-text-sub-color, 10%);
+        font-weight: bold;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($mv-bg-color, 5%) !important;
+  }
+}

@@ -1,0 +1,13 @@
+.btn-primary {
+  background: $mv-bg-sub-color;
+  width: 25%;
+  border: none;
+
+  .mv-auth-text-btn {
+    font-weight: bold;
+  }
+
+  &:hover {
+    background: darken($mv-bg-sub-color, 10%);
+  }
+}
