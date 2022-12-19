@@ -1,24 +1,32 @@
 .mv-nav-container {
-  position: relative;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  .mv-nav-navLink {
-    @include nav-link(0.6);
-  }
-
-  .mv-nav-navLink-active {
-    @include nav-link(1);
-  }
-
-  .mv-nav-utils-container {
-    position: absolute;
-    right: 4%;
-    top: 20%;
-    .mv-nav-user-btn {
-      border-color: white;
-      &::after {
-        display: none;
-      }
+    position: fixed;
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+    top: 0;
+    z-index: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: black;
+    .mv-nav-navLink {
+        color: $mv-text-main-color;
+        font-size: 16px;
+        transition: all 0.2s linear;
+        &:hover {
+            color: $mv-text-main-color;
+            opacity: 0.6;
+        }
     }
-  }
+    .mv-nav-utils-container {
+        position: absolute;
+        right: 4%;
+        top: 20%;
+        .mv-nav-user-btn {
+            border-color: white;
+            &::after {
+                display: none;
+            }
+        }
+    }
 }
+

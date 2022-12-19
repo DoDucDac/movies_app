@@ -1,0 +1,35 @@
+.mv-footer-container {
+    margin-top: 20px;
+    padding: 0 90px 0 90px;
+    border-top: 0.5px solid #ffffffa3;
+    padding-top: 20px;
+    .mv-footer-app {
+        display: flex;
+        gap: 20px;
+    }
+    .mv-footer-utils {
+        margin-top: 20px;
+        padding-right: 200px;
+        .mv-footer-utilItem {
+            text-decoration: none;
+            color: $mv-text-sub-color;
+            padding-bottom: 10px;
+            font-size: 13px;
+        }
+    }
+    .mv-footer-btn-service {
+        .btn {
+            border-radius: 0;
+            border-color: 0.5px solid grey;
+            font-size: 13px;
+            color: grey;
+        }
+    }
+    .mv-footer-inc {
+        p {
+            padding-top: 10px;
+            color: grey;
+            font-size: 11px;
+        }
+    }
+}

@@ -6,7 +6,6 @@ import {
 
 const INITIAL_STATE = {
   loading: false,
-  loginSuccess: false,
   userInfo: [],
 };
 
@@ -16,20 +15,17 @@ const userReducer = (state = INITIAL_STATE, action: any) => {
       return {
         ...state,
         loading: true,
-        loginSuccess: false,
       };
     case USER_LOGIN_SUCCESS:
       return {
         ...state,
         loading: false,
-        loginSuccess: true,
         userInfo: action.payload,
       };
     case USER_LOGIN_FAILURE:
       return {
         ...state,
         loading: false,
-        loginSuccess: false,
         userInfo: [],
       };
     default:

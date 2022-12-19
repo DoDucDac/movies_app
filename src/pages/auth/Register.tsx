@@ -22,6 +22,7 @@ const Register = () => {
   const [groupCode, setGroupCode] = useState("");
 
   const handleRegister = (e: any) => {
+    debugger;
     e.preventDefault();
 
     dispatch(

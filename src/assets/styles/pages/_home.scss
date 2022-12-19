@@ -1,15 +1,25 @@
 .mv-home-container {
-   margin-top: 20px;
-   position: relative;
+   margin-top: 76px;
+   .mv-home-banner {
+      position: relative;
+      // border-bottom: 0.5px solid white;
+      box-shadow: 0px 2px 10px 0px rgb(125, 117, 117);
+      .carousel-control-prev {
+         z-index: 0;
+      }
+      .carousel-control-next {
+         z-index: 0;
+      }
+   }
    img {
       width: 100%;
-      max-height: 650px;
+      height: 89vh;
    }
    .mv-home-btn-container {
       position: absolute;
       bottom: 20%;
       left: 5%;
-      z-index: 1;
+      z-index: 0;
       .mv-home-btn-book {
          background-color: #ffffffb7;
          color: $mv-bg-color;
@@ -26,6 +36,92 @@
          font-weight: 600;
          margin-left: 15px;
          border: 1px solid white;
+      }
+   }
+   .mv-home-list-container {
+      margin-top: 30px;
+      .mv-home-list-category {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 10px;
+         .abc {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            .category-link {
+               font-size: 15px;
+               line-height: 18px;
+               font-weight: 600;
+               color: $mv-text-main-color;
+               transition: all 0.2s linear;
+               cursor: pointer;
+               &:hover {
+                  opacity: 0.6;
+               }
+            } 
+         }
+         &:after {
+            content: "";
+            height: 2px;
+            width: 50%;
+            background-image: linear-gradient(to right, rgb(148, 100, 100) , rgb(143, 143, 83))
+         }
+      }
+      .mv-home-list {
+      margin-top: 20px;
+      }
+      .mv-home-list-item {
+         height: fit-content;
+         margin-bottom: 20px;
+         .mv-home-item {
+            height: fit-content;
+            background-color: #262424;
+            height: 320px;
+            border-radius: 5px;
+            border: 1px solid rgb(78, 95, 95);
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s linear;
+            &:hover {
+               transform: translateY(-7px);
+            }
+            img {
+               height: 250px;
+               object-fit: fill;
+               border-top-left-radius: 5px;
+               border-top-right-radius: 5px;
+            }
+            p {
+               margin: 0;
+            }
+            .name-movie {
+               padding-top: 5px;
+               padding-left: 5px;
+               font-size: 13px;
+               font-weight: 700;
+               line-height: 18px;
+               color: $mv-text-main-color;
+               text-transform: uppercase;
+            }
+            .rating {
+               padding-left: 5px;
+               font-size: 13px;
+               font-weight: 600;
+               line-height: 18px;
+               color: $mv-text-main-color;
+            }
+            .comming {
+               padding-left: 5px;
+               font-size: 11px;
+               font-weight: 600;
+               line-height: 18px;
+               color: $mv-text-main-color;
+               font-style: italic;
+               position: absolute;
+               bottom: 2%;
+            }
+         }
       }
    }
 }
