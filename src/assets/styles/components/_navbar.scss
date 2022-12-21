@@ -1,7 +1,8 @@
 .mv-nav-container {
-  position: relative;
   padding-top: 10px;
   padding-bottom: 10px;
+  background-color: black;
+  // padding-left: 10%;
   .mv-nav-navLink {
     @include nav-link(0.6);
   }

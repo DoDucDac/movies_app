@@ -10,7 +10,7 @@ import logoNetFlix from "../../assets/images/Netflix_2015_logo.svg.png";
 
 const Navbar = () => {
   return (
-    <div className="mv-nav-container">
+    <div className="mv-nav-container container">
       <NavBar bg="Dark" expand="lg">
         <Container fluid>
           <NavBar.Brand href="/home">
