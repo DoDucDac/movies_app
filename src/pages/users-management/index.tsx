@@ -13,6 +13,7 @@ const UserManagement = () => {
   const userData = useSelector((state: AppState) => state.listUsers.users);
   const loading = useSelector((state: AppState) => state.listUsers.loading);
   useEffect(() => {
+    debugger;
     dispatch(
       getListUser({
         MaNhom: "GP01",

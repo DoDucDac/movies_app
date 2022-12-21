@@ -5,6 +5,7 @@ import { ROUTES } from "./constants";
 import ContentLayout from "./layouts/content-layout";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
+import UserDetail from "./pages/detail-user";
 import Home from "./pages/home";
 import NotFound from "./pages/not-found";
 import UserManagement from "./pages/users-management";
@@ -24,6 +25,7 @@ function App() {
         <Route element={<ContentRoute />}>
           <Route path={ROUTES.HOME} element={<Home />} />
           <Route path={ROUTES.USERS} element={<UserManagement />} />
+          <Route path={ROUTES.USER_DETAIL} element={<UserDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>
