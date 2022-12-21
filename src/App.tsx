@@ -6,6 +6,7 @@ import ContentLayout from "./layouts/content-layout";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Home from "./pages/home";
+import MovieDetail from "./pages/home/MovieDetail";
 import NotFound from "./pages/not-found";
 import UserManagement from "./pages/users-management";
 import AuthRoute from "./routes/auth-route";
@@ -24,6 +25,7 @@ function App() {
         <Route element={<ContentRoute />}>
           <Route path={ROUTES.HOME} element={<Home />} />
           <Route path={ROUTES.USERS} element={<UserManagement />} />
+          <Route path={ROUTES.MOVIE} element={<MovieDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>

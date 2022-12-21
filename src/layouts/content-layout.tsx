@@ -7,7 +7,7 @@ const ContentLayout = ({ children }: any) => {
             <div className="mv-navbar">
                 <Navbar />
             </div>
-            {children}
+            <div className="mv-content-children-container">{children}</div>
             <Footer />
         </div>
     );
