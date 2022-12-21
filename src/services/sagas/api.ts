@@ -1,14 +1,15 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { BASE_URL } from "../../constants";
+import { ACCESS_TOKEN, BASE_URL } from "../../constants";
 
 const instance = (header?: Record<string, string>) => {
   let returnValue = axios.create();
-
+  const access_token = localStorage.getItem(ACCESS_TOKEN);
   returnValue.interceptors.request.use(
     async (config) => {
       config.headers = {
         Accept: "application/json",
         "Content-Type": "application/json-patch+json",
+        Authorization: `Bearer ${access_token}`,
       };
 
       return config;
